@@ -22,10 +22,11 @@
     },
     "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
     "rules": {
+        "no-unused-vars": "warn",
         "react/function-component-definition": "off",
-        "prettier/prettier": "error",
+        "prettier/prettier": "warn",
         "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "warn",
+        "react-hooks/exhaustive-deps": "off",
         "react/jsx-filename-extension": [
             1,
             {
