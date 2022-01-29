@@ -7,6 +7,7 @@ type Props = {
 };
 
 
+
 const noPrice = () => (Math.random() * 10).toFixed(2);
 console.log(noPrice())
 
@@ -17,7 +18,7 @@ const ComicItem: React.FC<Props> = ({ comic }) => {
                 src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
                 alt={`Image of ${comic.title}`}
             />
-            <S.WrapperTitle>{comic.title}</S.WrapperTitle>
+            <S.WrapperTitle>{Number(comic.id) < 300 ? `${comic.title} (RARO)` : comic.title}</S.WrapperTitle>
             <S.WrapperPrice>R$ {comic.prices[0].price === 0  ? noPrice() : comic.prices[0].price}</S.WrapperPrice>
         </S.Wrapper>
     );
