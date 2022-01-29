@@ -3,7 +3,7 @@ import ComicItem from '../Comic-Item';
 import api from '../../services/api';
 import * as S from './styles';
 
-interface Comic {
+export type Comic = {
     id: string;
     title: string;
     description: string;
@@ -14,7 +14,7 @@ interface Comic {
     prices: {
         price: number;
     };
-}
+};
 
 const Comics: React.FC = () => {
     const [comics, setComics] = useState<Comic[]>([]);
@@ -31,9 +31,7 @@ const Comics: React.FC = () => {
                 {comics.map(comic => (
                     <ComicItem
                         key={comic.id}
-                        title={comic.title}
-                        description={comic.description}
-                        thumb={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
+                        comic={comic}
                     />
                 ))}
             </S.WrapperList>

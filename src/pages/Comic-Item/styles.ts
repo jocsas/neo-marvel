@@ -15,6 +15,7 @@ export const WrapperTitle = styled.h2`
     margin: 0 0 0.5em 0;
     font-size: 1em;
     font-weight: bold;
+    color: white;
 `;
 
 export const WrapperDescription = styled.a`
@@ -24,5 +25,5 @@ export const WrapperDescription = styled.a`
 
 export const WrapperImg = styled.img`
     width: 100%;
-    height: 100% - 25;
+    height: 80%;
 `;

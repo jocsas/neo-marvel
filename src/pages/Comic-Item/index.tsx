@@ -1,18 +1,20 @@
 import React from 'react';
 import * as S from './styles';
+import { Comic } from '../Comics';
 
 type Props = {
-    title: string;
-    description: string;
-    thumb: string;
+    comic: Comic;
 };
 
-const ComicItem: React.FC<Props> = ({ title, description, thumb }) => {
+const ComicItem: React.FC<Props> = ({ comic }) => {
     return (
         <S.Wrapper>
-            <S.WrapperTitle>{title}</S.WrapperTitle>
-            <S.WrapperDescription>{description}</S.WrapperDescription>
-            <S.WrapperImg>{thumb}</S.WrapperImg>
+            <S.WrapperImg
+                src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
+                alt={`Image of ${comic.title}`}
+            />
+            <S.WrapperTitle>{comic.title}</S.WrapperTitle>
+            {/* <S.WrapperDescription>{comic.description}</S.WrapperDescription> */}
         </S.Wrapper>
     );
 };
