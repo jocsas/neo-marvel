@@ -12,7 +12,9 @@ export type Comic = {
         extension: string;
     };
     prices: {
-        price: number;
+        0: {
+            price: number;
+        };
     };
 };
 
@@ -22,6 +24,7 @@ const Comics: React.FC = () => {
         api.get('/comics')
             .then(res => {
                 setComics(res.data.data.results);
+                console.log(res.data.data.results)
             })
             .catch(err => console.log(err));
     }, []);
@@ -29,10 +32,7 @@ const Comics: React.FC = () => {
         <S.Wrapper>
             <S.WrapperList>
                 {comics.map(comic => (
-                    <ComicItem
-                        key={comic.id}
-                        comic={comic}
-                    />
+                    <ComicItem key={comic.id} comic={comic} />
                 ))}
             </S.WrapperList>
         </S.Wrapper>
