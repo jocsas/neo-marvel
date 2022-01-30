@@ -18,8 +18,9 @@ const ComicItem: React.FC<Props> = ({ comic }) => {
                 src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
                 alt={`Image of ${comic.title}`}
             />
-            <S.WrapperTitle>{Number(comic.id) < 300 ? `${comic.title} (RARO)` : comic.title}</S.WrapperTitle>
+            <S.WrapperTitle>{Number(comic.id) < 300 ? `${comic.title} (Rare)` : comic.title}</S.WrapperTitle>
             <S.WrapperPrice>R$ {comic.prices[0].price === 0  ? noPrice() : comic.prices[0].price}</S.WrapperPrice>
+            <S.WrapperButton onClick={() => console.log(comic.prices[0].price, 'preco')}>+</S.WrapperButton>
         </S.Wrapper>
     );
 };

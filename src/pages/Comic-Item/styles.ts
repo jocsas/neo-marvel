@@ -6,8 +6,10 @@ export const Wrapper = styled.div`
     justify-content: space-between;
     margin: 1em;
     width: 250px;
-    height: 400px;
+    height: 500px;
     padding: 8px;
+    background-color: blue;
+    border-radius: 1;
 `;
 
 export const WrapperTitle = styled.h2`
@@ -42,4 +44,9 @@ export const WrapperImg = styled.img`
         transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
         transform: rotate(5deg);
         }
+`;
+
+export const WrapperButton = styled.button`
+    flex: 3;
+    width: 20px;
 `;

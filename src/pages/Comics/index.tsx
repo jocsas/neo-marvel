@@ -3,6 +3,8 @@ import ComicItem from '../Comic-Item';
 import api from '../../services/api';
 import * as S from './styles';
 
+const price = parseFloat(((Math.random() * (200 - 20)) + 20).toFixed(2));
+
 export type Comic = {
     id: string;
     title: string;
