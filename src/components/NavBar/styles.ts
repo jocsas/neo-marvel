@@ -1,12 +1,19 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.nav`
     display: flex;
     justify-content: space-between;
-    padding: 5px;
+    align-items: center;
+    padding: 1em 5em;
     background-color: black;
+    color: white;
 
-    input{
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    input {
         font-weight: bold;
         font-size: 1.2em;
         color: black;
@@ -22,19 +29,32 @@ export const Wrapper = styled.div`
         font-weight: bold;
         font-size: 1.2em;
         color: white;
-        font-weight:bold;
+        font-weight: bold;
         background-color: red;
         margin-left: 1%;
         border: 2px solid #ccc;
         padding: 8px 8px;
         border-radius: 10px;
-        
-        &:hover{
+        &:hover {
             color: red;
-            background-color: blue;
+            background-color: white;
             border: 2px solid black;
             cursor: pointer;
         }
     }
-    
+    .nav-bag {
+        display: flex;
+        align-items: center;
+    }
+
+    .cartQuantity {
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 20px;
+        width: 20px;
+        background-color: yellow;
+        border-radius: 50%;
+    }
 `;
