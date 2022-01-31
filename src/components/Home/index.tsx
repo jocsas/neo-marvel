@@ -1,10 +1,10 @@
 import React from 'react'
-import Comics from '../../pages/Comics';
+import ComicList from '../ComicList'
 
 const Home: React.FC = () => {
     return (
         <>
-            <Comics />
+            <ComicList />
         </>
     )
 }

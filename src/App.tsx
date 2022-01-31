@@ -1,23 +1,27 @@
-import React from 'react';
-import { BrowserRouter,  Route, Routes, Navigate } from 'react-router-dom'
-import Cart from './components/Cart';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
-import NavBar from './components/NavBar';
+import { Header } from './components/Header';
+import { ShoppingCart } from './components/ShoppingCart';
+import { ShoppingCartContextProvider } from './context/shoppingCart';
 import NotFound from './pages/NotFound';
 import GlobalStyle  from './styles/global';
 
-const App: React.FC = () => {
+function App()  {
     return (
         <>
-            <BrowserRouter>
-                <NavBar />
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/cart" element={<Cart />} />
-                    <Route path="/not-found" element={<NotFound />} />
-                    <Route path="*" element={<Navigate to="/not-found" />} />
-                </Routes>
-            </BrowserRouter>
+            <Router>
+        <ShoppingCartContextProvider>
+            <Header />
+            <Switch>
+              <Route path="/" exact>
+                <Home />
+              </Route>
+              <Route path="/checkout">
+                <ShoppingCart />
+              </Route>
+            </Switch>
+        </ShoppingCartContextProvider>
+    </Router>
             <GlobalStyle />
         </>
     );
