@@ -10,7 +10,7 @@ type PropsShoppingCartContext = {
    addComic: (comic: Comic, quantity: number) => void
    removeComic: (comic: Comic) => void;
    clearShoppingCart: () => void;
-   getNumberOfComics: () => number;
+   getCartLenght: () => number;
    getTotalValue: () => number;
    cartActive: boolean,
    handleCartActive: (value: boolean) => void;
@@ -67,13 +67,9 @@ export const ShoppingCartContextProvider = (props: ShoppingCartProvider) => {
       setShoppingCart([]);
    }
 
-   function getNumberOfComics(){
-      let numberOfComics = 0;
-      shoppingCart.map(cartItem =>{
-         const {quantity} = cartItem;
-         numberOfComics+= quantity;
-      });
-      return numberOfComics;
+   function getCartLenght(){
+      
+      return shoppingCart.length;
    }
    function getTotalValue() {
 
@@ -93,7 +89,7 @@ return (
          addComic,
          removeComic,
          clearShoppingCart,
-         getNumberOfComics,
+         getCartLenght,
          getTotalValue,
          cartActive,
          handleCartActive

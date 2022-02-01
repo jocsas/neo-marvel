@@ -4,6 +4,7 @@ import Comic from '../../types/Comic';
 import { useShoppingCart } from '../../context/shoppingCart';
 import { currency } from '../../helpers/format';
 import { Link } from 'react-router-dom';
+import { BsCartPlus } from 'react-icons/bs';
 
 
 
@@ -22,10 +23,12 @@ export function ComicItem ( comic: Comic) {
                     {comic.title}
             </Link>
             </S.Title>
-            <S.Price>
-                {currency(comic.price)}
-            </S.Price>
-            <S.Button onClick={() => addComic(comic, 1)}>ADICIONAR</S.Button>
+            <S.WrapperBuy>
+                <S.Price>
+                    ${(comic.price.toFixed(2))}
+                </S.Price>
+                <S.Button onClick={() => addComic(comic, 1)}>BUY</S.Button>
+            </S.WrapperBuy>
         </S.Wrapper>
     );
 };

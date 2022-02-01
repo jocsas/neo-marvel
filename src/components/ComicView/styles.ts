@@ -1,24 +1,21 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 
 export const Wrapper = styled.div`
     display: flex;
     width: 100%;
-    height: calc(100vh - 60px);
+    padding: 30px 30px;
     background: #352F32;
-    padding: 3em 5em;
 `;
 
 export const WrapperComic = styled.div`
     display: flex;
-    flex-direction: row;
-    margin: auto;
     width: 100%;
-    background-color: #352F32;
-
-    @media (max-width: 500px) {
-        width: 300px;
-        height: 500px;
+    
+    @media (max-width: 768px) {
+        display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
     }
 
  `;
@@ -28,6 +25,10 @@ export const WrapperInfo = styled.div`
     flex-direction: column;
     align-items: flex-start;
     padding: 0 4em;
+
+    @media (max-width: 768px) {
+        padding: 0;
+    }
 `;
 
 export const Title = styled.h2`
@@ -52,10 +53,7 @@ export const Img = styled.img`
     height: 600px;
     box-shadow: 2px 2px 10px 2px;
     
-    @media (max-width: 500px) {
-        width: 300px;
-        height: 80%;
-    }
+    
 `;
 
 export const Button = styled.button`
@@ -68,7 +66,6 @@ export const Button = styled.button`
     padding: 5px;
     cursor: pointer;
     border: 1px solid black;
-    box-sizing: border-box;
     
     :hover {
         background-color: gold;

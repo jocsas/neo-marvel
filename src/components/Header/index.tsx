@@ -7,7 +7,7 @@ import * as S from './styles';
 
 export function Header() {
 
-    const { getNumberOfComics, cartActive, handleCartActive } = useShoppingCart();
+    const { getCartLenght, cartActive, handleCartActive } = useShoppingCart();
 
     function handleShoppingCartDisplay(){
         handleCartActive(!cartActive);
@@ -28,11 +28,11 @@ export function Header() {
                      type="text"
                      name="searchbar"
                      id="searchbar"
-                     placeholder='Pesquisa'
+                     placeholder='Search'
                   />
                   <button
                     className='searchIcon' 
-                     title='Pesquisar'
+                     title='Search'
                      type='submit'
                   >
                      <BsSearch />
@@ -47,7 +47,7 @@ export function Header() {
                         size={24}
                      />
                      <span className='cartQuantity'>
-                        {getNumberOfComics()}
+                        {getCartLenght()}
                      </span>
                   </button>
                 </div>

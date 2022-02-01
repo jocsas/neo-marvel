@@ -26,21 +26,35 @@ export const Wrapper = styled.div`
         height: 500px;
     }
 
-    `;
+`;
+
+export const WrapperBuy = styled.div`
+    display: flex;
+`;
+
 
 export const Title = styled.h2`
     overflow: hidden;
     text-overflow: clip;
+    height: 45px;
     margin: 0.5em;
     font-size: 1.1em;
-    color: yellow;
+    color: #F1C621;
     text-align: center;
-    text-shadow: black 1px 1.2px;
+    text-shadow: 1px 0 0 #203846, -1px 0 0 #203846, 0 1px 0 #203846, 0 -1px 0 #203846, 1px 1px #203846, -1px -1px 0 #203846, 1px -1px 0 #203846, -1px 1px 0 #203846;
+
+
+    @media (max-width: 500px) {
+        font-size: 1.2em;
+    }
     
     a {
         text-decoration: none;
         all: unset;
         cursor: pointer;
+        :hover{
+            color: orange;
+        }
     }
     `;
 
@@ -50,11 +64,13 @@ export const Description = styled.p`
 `;
 
 export const Price = styled.p`
-    margin-top: 0;
+    margin: 0 10px 0 0;
     font-weight: bold;
-    font-size: 1.3em;
-    color: white;
-    text-shadow: black 1px 1px;
+    font-size: 1.8em;
+    background: -webkit-linear-gradient(#14171A,#426B89);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    
 `;
 
 export const Img = styled.img`
@@ -72,12 +88,18 @@ export const Img = styled.img`
 `;
 
 export const Button = styled.button`
-    padding: 0.5em 3em;
-    margin-bottom: 0.5em;
+    all: unset;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0.5em 0.5em;
+    margin-bottom: 0.2em;
     background-color: #81343A;
     color: white;
-    font-weight: bold;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.2em;
     border-radius: 5px;
-    border: 1px solid black;
+    cursor: pointer;
+
+    :hover{
+        
+    }
 `;

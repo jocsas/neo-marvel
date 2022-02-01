@@ -15,14 +15,14 @@ export function ShoppingCart() {
     return (
         <S.Wrapper>
             <S.WrapperCartTop>
-                <p>Meu Carrinho</p>
-                <button onClick={() => clearShoppingCart()}>Esvaziar</button>
+                <p>Cart</p>
+                <button onClick={() => clearShoppingCart()}>Clear</button>
             </S.WrapperCartTop>
             <S.WrapperCartList>
                 {
                 shoppingCart?.length == 0 ? (
                     <li>
-                        <p>Carrinho de compras vazio</p>
+                        <p>Empty shopping cart....</p>
                     </li>
                 ) : (
                     shoppingCart?.map(cartItem => {
@@ -47,9 +47,9 @@ export function ShoppingCart() {
                                 </div>
                                 <button
                                     onClick={() => removeComic(comic)}
-                                    title="Remover do carrinho"
+                                    title="Remove from cart"
                                 >
-                                    Remover
+                                    Remove
                                 </button>
                             </li>
                         );
@@ -68,7 +68,7 @@ export function ShoppingCart() {
                             style={{ fontSize: 18, height: 45 }}
                             onClick={() => handleCartActive(false)}
                         >
-                            Finalizar compra
+                            Checkout
                         </button>
                     </Link>
                 </div>
