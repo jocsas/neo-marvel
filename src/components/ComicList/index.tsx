@@ -8,12 +8,11 @@ export function ComicList() {
 
     const [comicList, setComicList] = useState<Comic[]>([]);
 
-    console.log('comic list',comicList)
-
     useEffect(() => {
         async function fetchData() {
            const fetchedComics = await getComics();
            setComicList(fetchedComics)
+           console.log(fetchedComics)
         }
         fetchData()
      }, []);

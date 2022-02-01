@@ -3,6 +3,7 @@ import Comic from '../../types/Comic';
 
 import { useShoppingCart } from '../../context/shoppingCart';
 import { currency } from '../../helpers/format';
+import { Link } from 'react-router-dom';
 
 
 
@@ -12,17 +13,19 @@ export function ComicItem ( comic: Comic) {
 
     return (
         <S.Wrapper>
-            <S.WrapperImg
-                src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
-                alt={`Picture of ${comic.title}`}
+            <S.Img
+                    src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
+                    alt={`Picture of ${comic.title}`}
             />
-            <S.WrapperTitle>
-                {comic.title}
-            </S.WrapperTitle>
-            <S.WrapperPrice>
+            <S.Title>
+                <Link to={`/details/${comic.id}`}>
+                    {comic.title}
+            </Link>
+            </S.Title>
+            <S.Price>
                 {currency(comic.price)}
-            </S.WrapperPrice>
-            <S.WrapperButton onClick={() => addComic(comic, 1)}>ADICIONAR</S.WrapperButton>
+            </S.Price>
+            <S.Button onClick={() => addComic(comic, 1)}>ADICIONAR</S.Button>
         </S.Wrapper>
     );
 };

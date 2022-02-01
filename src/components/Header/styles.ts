@@ -83,7 +83,6 @@ export const WrapperNav = styled.div`
         justify-content: center;
 
         .cartIcon {
-            background-color: red;
             all: unset;
             cursor: pointer;
             display: flex;

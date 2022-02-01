@@ -11,15 +11,19 @@ const scaleUpCenter = keyframes`
 
 export const Wrapper = styled.div`
     display: flex;
+    width: 100%;
+    height: calc(100vh - 50px);
+    background: #352F32;
+`;
+
+export const WrapperComic = styled.div`
+    display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: space-around;
-    margin: 1em;
-    width: 200px;
-    height: 400px;
-    background-color: #ccc;
-    border-radius: 1;
-    box-sizing: content-box;
+    margin: auto;
+    width: 100%;
+    background-color: #352F32;
 
     @media (max-width: 500px) {
         width: 300px;
@@ -29,8 +33,6 @@ export const Wrapper = styled.div`
     `;
 
 export const Title = styled.h2`
-    overflow: hidden;
-    text-overflow: clip;
     margin: 0.5em;
     font-size: 1.1em;
     color: yellow;
@@ -58,9 +60,8 @@ export const Price = styled.p`
 `;
 
 export const Img = styled.img`
-    margin-top: -5px;
-    width: 200px;
-    height: 70%;
+    width: 500px;
+    height: 400px;
     box-shadow: 2px 2px 10px 2px;
     &:hover{
         animation: ${scaleUpCenter} 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
@@ -69,15 +70,4 @@ export const Img = styled.img`
         width: 300px;
         height: 80%;
     }
-`;
-
-export const Button = styled.button`
-    padding: 0.5em 3em;
-    margin-bottom: 0.5em;
-    background-color: #81343A;
-    color: white;
-    font-weight: bold;
-    letter-spacing: 0.3em;
-    border-radius: 5px;
-    border: 1px solid black;
 `;

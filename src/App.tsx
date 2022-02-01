@@ -5,6 +5,7 @@ import { ShoppingCart } from './components/ShoppingCart';
 import { ShoppingCartContextProvider } from './context/shoppingCart';
 import NotFound from './pages/NotFound';
 import GlobalStyle  from './styles/global';
+import { ComicView } from './components/ComicView';
 
 function App()  {
     return (
@@ -15,6 +16,9 @@ function App()  {
             <Switch>
               <Route path="/" exact>
                 <Home />
+              </Route>
+              <Route path="/details/:id" exact>
+                <ComicView />
               </Route>
               <Route path="/checkout">
                 <ShoppingCart />

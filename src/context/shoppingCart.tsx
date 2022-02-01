@@ -73,7 +73,6 @@ export const ShoppingCartContextProvider = (props: ShoppingCartProvider) => {
          const {quantity} = cartItem;
          numberOfComics+= quantity;
       });
-      console.log(numberOfComics)
       return numberOfComics;
    }
    function getTotalValue() {

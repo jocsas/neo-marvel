@@ -6,7 +6,7 @@ export async function getComics() {
 
 
 // Obtendo uma lista de quadrinhos
-   const { data } = await api.get('/comics');
+   const { data } = await api.get('comics');
    const fetchedComics = data.data.results;
 
    let comicList: Comic[] = [];
@@ -15,6 +15,13 @@ export async function getComics() {
       comicList.push(newComic);
    }
    return comicList;
+}
+
+export async function getComic(id: string){
+    const { data } = await api.get(`comics/${id}`)
+    const fetchedComic = data.data.results;
+
+    return fetchedComic;
 }
 
 /**
@@ -29,6 +36,8 @@ async function setComicInfo(comic: Comic) {
       description,
       thumbnail,
    }: any = comic;
+
+   // Setando preço randomico. Alguns vem com preço zerado..
 
    const price = parseFloat(((Math.random() * (20 - 10)) + 10).toFixed(2));
 
