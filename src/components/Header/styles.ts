@@ -101,7 +101,7 @@ export const WrapperNav = styled.div`
             justify-content: center;
             height: 20px;
             width: 20px;
-            background-color: yellow;
+            background-color: gold;
             color: black;
             font-size: 1em;
             font-weight: bold;

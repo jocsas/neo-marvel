@@ -1,26 +1,17 @@
 import styled, { keyframes } from 'styled-components';
 
-const scaleUpCenter = keyframes`
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(1.1);
-    }
-`;
 
 export const Wrapper = styled.div`
     display: flex;
     width: 100%;
-    height: calc(100vh - 50px);
+    height: calc(100vh - 60px);
     background: #352F32;
+    padding: 3em 5em;
 `;
 
 export const WrapperComic = styled.div`
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-around;
+    flex-direction: row;
     margin: auto;
     width: 100%;
     background-color: #352F32;
@@ -30,44 +21,58 @@ export const WrapperComic = styled.div`
         height: 500px;
     }
 
-    `;
+ `;
+
+export const WrapperInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 4em;
+`;
 
 export const Title = styled.h2`
-    margin: 0.5em;
-    font-size: 1.1em;
-    color: yellow;
-    text-align: center;
+    margin: 1em;
+    font-size: 2em;
+    color: gold;
+    text-align: left;
     text-shadow: black 1px 1.2px;
+    letter-spacing: 0.1em;
     
-    a {
-        text-decoration: none;
-        all: unset;
-        cursor: pointer;
-    }
-    `;
+ `;
 
 export const Description = styled.p`
     color: white;
-    font-weight: bold;
-`;
-
-export const Price = styled.p`
-    margin-top: 0;
-    font-weight: bold;
-    font-size: 1.3em;
-    color: white;
-    text-shadow: black 1px 1px;
+    margin: 2em;
+    font-size: 1.1em;
+    line-height: 1.5em;
 `;
 
 export const Img = styled.img`
-    width: 500px;
-    height: 400px;
+    width: 400px;
+    height: 600px;
     box-shadow: 2px 2px 10px 2px;
-    &:hover{
-        animation: ${scaleUpCenter} 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-    }
+    
     @media (max-width: 500px) {
         width: 300px;
         height: 80%;
+    }
+`;
+
+export const Button = styled.button`
+    margin: 0 2em;
+    font-size: 1em;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid black;
+    box-sizing: border-box;
+    
+    :hover {
+        background-color: gold;
+        color: black;
+        border: 1px solid #C07D07;
     }
 `;

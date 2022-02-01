@@ -6,7 +6,7 @@ export async function getComics() {
 
 
 // Obtendo uma lista de quadrinhos
-   const { data } = await api.get('comics');
+   const { data } = await api.get('comics?format=comic');
    const fetchedComics = data.data.results;
 
    let comicList: Comic[] = [];

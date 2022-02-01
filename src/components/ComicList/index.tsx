@@ -12,7 +12,6 @@ export function ComicList() {
         async function fetchData() {
            const fetchedComics = await getComics();
            setComicList(fetchedComics)
-           console.log(fetchedComics)
         }
         fetchData()
      }, []);
