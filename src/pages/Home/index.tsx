@@ -1,5 +1,5 @@
 import React from 'react'
-import ComicList from '../ComicList'
+import ComicList from '../../components/ComicList'
 
 const Home: React.FC = () => {
     return (
