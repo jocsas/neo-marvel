@@ -32,14 +32,16 @@ export function Checkout() {
     const [ discountGold, setDiscountGold] = useState<number>();
     const [ totalValue, setTotalValue ] = useState<number>();
     
+
+    //  Function to change price with discount based on rare attribute;
     function handleSetTotal() {
         let total = 0
         let discountRegular = 0
         let discountGold = 0
        shoppingCart?.map(cartItem =>{
            const { comic, quantity } = cartItem;
-           if(coupon === 'neo') setDiscountRegular(discountRegular = 10)!;
-           if(coupon === 'gold') setDiscountGold(discountGold = 10)!
+           if(coupon === 'PROMONEOMARVEL') setDiscountRegular(discountRegular = 10)!;
+           if(coupon === 'NEOMARVELGOLD') setDiscountGold(discountGold = 10)!
            total += (comic.price - (comic.rare > 0 ? discountRegular : discountGold)) * quantity ;
        })
        setTotalValue(total);
