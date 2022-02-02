@@ -40,6 +40,10 @@ async function setComicInfo(comic: Comic) {
    // Setando preço randomico. Alguns vem com preço zerado..
 
    const price = parseFloat(((Math.random() * (20 - 10)) + 10).toFixed(2));
+   
+   // gerando numero radomico para setar atributo raro
+   const rare = Math.floor(Math.random() * 10);
+   
 
    const newComic: Comic = {
        id,
@@ -47,7 +51,9 @@ async function setComicInfo(comic: Comic) {
        description,
        thumbnail,
        price,
-       amount: 0
+       amount :0,
+       rare,
+
    }
 
    return newComic;

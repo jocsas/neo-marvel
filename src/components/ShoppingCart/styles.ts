@@ -12,33 +12,33 @@ const fadeIn = keyframes`
 
 const scaleUpCenter = keyframes`
     0% {
-      -webkit-transform: scale(1);
-      transform: scale(1);
+        -webkit-transform: scale(1);
+        transform: scale(1);
     }
     100% {
-      -webkit-transform: scale(1.2);
-      transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
     }
-`;
+    `;
 const scaleUpCenterZero = keyframes`
     0% {
-      -webkit-transform: scale(0);
-      transform: scale(0);
+        -webkit-transform: scale(0);
+        transform: scale(0);
     }
     100% {
-      -webkit-transform: scale(1);
-      transform: scale(1);
+        -webkit-transform: scale(1);
+        transform: scale(1);
     }
-`;
+    `;
 
 const rotateSpinner = keyframes`
     0% {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     100% {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-`;
+    `;
 
 export const Wrapper = styled.aside`
     height: calc(100vh - 60px);
@@ -46,10 +46,42 @@ export const Wrapper = styled.aside`
     position: absolute;
     background-color: #fff;
     z-index: 3;
-    border: 5px solid #81343A;
+    border: 5px solid #81343a;
     display: flex;
     flex-direction: column;
 
+    .rareItem {
+        color: goldenrod;
+        font-weight: bold;
+    }
+
+    .bottom {
+        height: 100px;
+        margin: 10px 20px;
+        .total {
+            display: flex;
+            align-items: center;
+
+            margin-bottom: 25px;
+            p {
+                font-size: 18px;
+                flex-grow: 1;
+            }
+            strong {
+                font-size: 22px;
+                justify-self: flex-end;
+            }
+        }
+        .button {
+            all: unset;
+            padding: 0 2px;
+            margin-bottom: 0.2em;
+            background-color: #81343a;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
     @media (min-width: 768px) {
         width: 330px;
         right: 0;
@@ -123,7 +155,7 @@ export const WrapperCartList = styled.ul`
             align-items: center;
             justify-content: center;
             color: white;
-            background-color: #81343A;
+            background-color: #81343a;
             margin: 0px 0px 0px 0px;
         }
     }

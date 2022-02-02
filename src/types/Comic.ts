@@ -8,6 +8,7 @@ type Comic = {
     };
     price: number;
     amount: number;
+    rare: number;
  }
  
  export default Comic;

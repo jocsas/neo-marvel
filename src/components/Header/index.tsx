@@ -16,7 +16,7 @@ export function Header() {
         <>
         <S.Wrapper>
             <S.WrapperNav>
-            <Link to="/">
+            <Link to='/'>
                 <h2 className='logo'>NEO STORE</h2>
             </Link>
 
@@ -25,9 +25,9 @@ export function Header() {
                   className='searchBarWrapper'
                >
                   <input
-                     type="text"
-                     name="searchbar"
-                     id="searchbar"
+                     type='text'
+                     name='searchbar'
+                     id='searchbar'
                      placeholder='Search'
                   />
                   <button

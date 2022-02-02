@@ -1,5 +1,5 @@
-import { createContext, ReactNode, useContext, useState } from "react";
-import Comic from "../types/Comic";
+import { createContext, ReactNode, useContext, useState } from 'react';
+import Comic from '../types/Comic';
 
 type ShoppingCartComic = {
    comic: Comic;

@@ -17,6 +17,7 @@ export function ComicView() {
         }
         fetchData();
     }, []);
+    
     return (
         <S.Wrapper>
             {comic.map(hq => (

@@ -28,26 +28,26 @@ export function ShoppingCart() {
                     shoppingCart?.map(cartItem => {
                         const { comic, quantity } = cartItem;
                         return (
-                            <li key={comic.id} className="comic">
-                                <div className="comicLogo">
+                            <li key={comic.id} className='comic'>
+                                <div className='comicLogo'>
                                     {
                                         <img
                                             src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
                                         />
                                     }
                                 </div>
-                                <div className="comicInfoWrapper">
-                                    <div className="comicTitle">
+                                <div className='comicInfoWrapper'>
+                                    <div className={`${'comicTitle'} ${(comic.rare === 0 ? 'rareItem' : '')}`}>
                                         {comic.title}
                                     </div>
-                                    <span className="quantity">{quantity}</span>
-                                    <span className="price">
-                                        {currency(comic.price * quantity)}
+                                    <span className='quantity'>{quantity}</span>
+                                    <span className='price'>
+                                        {(comic.price * quantity).toFixed(2)}
                                     </span>
                                 </div>
                                 <button
                                     onClick={() => removeComic(comic)}
-                                    title="Remove from cart"
+                                    title='Remove from cart'
                                 >
                                     Remove
                                 </button>
@@ -60,9 +60,9 @@ export function ShoppingCart() {
                 <div className='bottom'>
                     <div className='total'>
                         <p>Total:</p>
-                        <strong>{currency(getTotalValue())}</strong>
+                        <strong>$ {getTotalValue().toFixed(2)}</strong>
                     </div>
-                    <Link to="/checkout">
+                    <Link to='/checkout'>
                         <button
                             className='button'
                             style={{ fontSize: 18, height: 45 }}

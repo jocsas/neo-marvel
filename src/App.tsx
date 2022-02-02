@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import { Header } from './components/Header';
-import { ShoppingCart } from './components/ShoppingCart';
 import { ShoppingCartContextProvider } from './context/shoppingCart';
 import NotFound from './pages/NotFound';
 import GlobalStyle  from './styles/global';
 import { ComicView } from './components/ComicView';
+import { Checkout } from './pages/Checkout';
 
 function App()  {
     return (
@@ -14,14 +14,14 @@ function App()  {
         <ShoppingCartContextProvider>
             <Header />
             <Switch>
-              <Route path="/" exact>
+              <Route path='/' exact>
                 <Home />
               </Route>
-              <Route path="/details/:id" exact>
+              <Route path='/details/:id' exact>
                 <ComicView />
               </Route>
-              <Route path="/checkout">
-                <ShoppingCart />
+              <Route path='/checkout'>
+                <Checkout />
               </Route>
             </Switch>
         </ShoppingCartContextProvider>

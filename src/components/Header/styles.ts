@@ -60,6 +60,7 @@ export const WrapperNav = styled.div`
         background-repeat: no-repeat;
         border: 2px solid transparent;
 
+        
         input {
             all: unset;
             width: 100%;

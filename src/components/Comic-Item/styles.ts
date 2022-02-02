@@ -21,6 +21,16 @@ export const Wrapper = styled.div`
     border-radius: 1;
     box-sizing: content-box;
 
+    .rareItem {
+        background-color: gold;
+        box-shadow: 1px 1px 10px 5px;
+
+        :hover {
+            color: black;
+            box-shadow: white 1px 1px 10px 5px;
+        }
+    }
+
     @media (max-width: 500px) {
         width: 300px;
         height: 500px;
@@ -98,8 +108,4 @@ export const Button = styled.button`
     letter-spacing: 0.2em;
     border-radius: 5px;
     cursor: pointer;
-
-    :hover{
-        
-    }
 `;
