@@ -1,6 +1,5 @@
 import { useShoppingCart } from '../../context/shoppingCart';
-import { currency } from '../../helpers/format';
-import { BsTrashFill, BsFillCartXFill, BsSearch, BsPlusCircle } from 'react-icons/bs';
+import { BsTrashFill, BsFillCartXFill, BsPlusCircle } from 'react-icons/bs';
 import { useForm } from 'react-hook-form';
 import * as S from './styles';
 import {
@@ -11,7 +10,7 @@ import {
     namePattern,
     phonePattern,
     statePattern,
-} from '../../helpers/inputValidation';
+} from '../../helpers/formValidation';
 import { useState } from 'react';
 import { Modal } from '../../components/Modal';
 
@@ -42,10 +41,8 @@ export function Checkout() {
            if(coupon === 'neo') setDiscountRegular(discountRegular = 10)!;
            if(coupon === 'gold') setDiscountGold(discountGold = 10)!
            total += (comic.price - (comic.rare > 0 ? discountRegular : discountGold)) * quantity ;
-           console.log(quantity, comic.title, comic.price)
        })
        setTotalValue(total);
-       return;
     }
 
     
@@ -57,6 +54,7 @@ export function Checkout() {
     
     return (
         <>
+            <main>
             {showModal ? <Modal /> : null}
             <S.Wrapper>
                 {shoppingCart?.length == 0 ? (
@@ -66,6 +64,7 @@ export function Checkout() {
                     </div>
                 ) : (
                     <>
+                        
                         <form
                             id='checkoutForm'
                             onSubmit={handleSubmit(onSubmit)}
@@ -354,7 +353,7 @@ export function Checkout() {
                                 <div className='total'>
                                     <p>Total:</p>
                                     <p className='totalValue'>
-                                        $ {(totalValue === undefined ? getTotalValue() : totalValue)}
+                                        $ {(totalValue === undefined ? getTotalValue() : totalValue).toFixed(2)}
                                     </p>
                                 </div>
                                 <button
@@ -371,6 +370,7 @@ export function Checkout() {
                     </>
                 )}
             </S.Wrapper>
+            </main>
         </>
     );
 }

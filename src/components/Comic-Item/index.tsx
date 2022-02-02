@@ -1,10 +1,7 @@
-import * as S from './styles';
-import Comic from '../../types/Comic';
-
-import { useShoppingCart } from '../../context/shoppingCart';
-import { currency } from '../../helpers/format';
 import { Link } from 'react-router-dom';
-import { BsCartPlus } from 'react-icons/bs';
+import Comic from '../../types/Comic';
+import { useShoppingCart } from '../../context/shoppingCart';
+import * as S from './styles';
 
 export function ComicItem(comic: Comic) {
     const { addComic } = useShoppingCart();
@@ -20,11 +17,11 @@ export function ComicItem(comic: Comic) {
             </S.Title>
             <S.WrapperBuy>
                 <S.Price>${comic.price.toFixed(2)}</S.Price>
-                <S.Button 
-                    className={`${(comic.rare === 0 ? 'rareItem' : '')}`}
+                <S.Button
+                    className={`${comic.rare === 0 ? 'rareItem' : ''}`}
                     onClick={() => addComic(comic, 1)}
-                    >
-                        BUY
+                >
+                    BUY
                 </S.Button>
             </S.WrapperBuy>
         </S.Wrapper>

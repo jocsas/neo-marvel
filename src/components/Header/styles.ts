@@ -13,7 +13,7 @@ const scaleUpCenter = keyframes`
 
 export const Wrapper = styled.header`
     width: 100%;
-    background-color: #81343A;
+    background-color: #81343a;
     color: white;
 
     height: 60px;
@@ -55,12 +55,11 @@ export const WrapperNav = styled.div`
         width: 50%;
         max-width: 400px;
         background: linear-gradient(white, #efefef),
-            linear-gradient(to right, #504E4F, #777171 );
+            linear-gradient(to right, #504e4f, #777171);
         background-origin: padding-box, border-box;
         background-repeat: no-repeat;
         border: 2px solid transparent;
 
-        
         input {
             all: unset;
             width: 100%;
@@ -75,8 +74,6 @@ export const WrapperNav = styled.div`
             cursor: pointer;
             color: black;
         }
-
-        
     }
     .cart {
         display: flex;
@@ -88,15 +85,17 @@ export const WrapperNav = styled.div`
             cursor: pointer;
             display: flex;
         }
-  
-        button:hover{
-            -webkit-animation: ${scaleUpCenter} 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-            animation: ${scaleUpCenter} 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+
+        button:hover {
+            -webkit-animation: ${scaleUpCenter} 0.4s
+            cubic-bezier(0.39, 0.575, 0.565, 1) both;
+            animation: ${scaleUpCenter} 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
+            both;
         }
-        button:first-of-type{
+        button:first-of-type {
             margin-right: 20px;
         }
-        .cartQuantity{
+        .cartQuantity {
             display: flex;
             align-items: center;
             justify-content: center;

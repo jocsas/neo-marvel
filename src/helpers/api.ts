@@ -5,7 +5,7 @@ import Comic from '../types/Comic';
 export async function getComics() {
 
 
-// Obtendo uma lista de quadrinhos
+// Obtains a Comics list
    const { data } = await api.get('comics?format=comic');
    const fetchedComics = data.data.results;
 
@@ -17,6 +17,7 @@ export async function getComics() {
    return comicList;
 }
 
+// Obtains a Comic by id
 export async function getComic(id: string){
     const { data } = await api.get(`comics/${id}`)
     const fetchedComic = data.data.results;
@@ -24,12 +25,10 @@ export async function getComic(id: string){
     return fetchedComic;
 }
 
-/**
- * Função responsável por inserir as informações no array de quadrinhos
- */
+
 async function setComicInfo(comic: Comic) {
    
-    // Extraindo os valores do quadrinho recebido via requisição
+    // Extract values from api
    const {
       id,
       title,
@@ -37,11 +36,11 @@ async function setComicInfo(comic: Comic) {
       thumbnail,
    }: any = comic;
 
-   // Setando preço randomico. Alguns vem com preço zerado..
+   // Generate random price, cause some comics dont send price
 
    const price = parseFloat(((Math.random() * (20 - 10)) + 10).toFixed(2));
    
-   // gerando numero radomico para setar atributo raro
+   // Generate aleatory number for show if is a Rare Item or not
    const rare = Math.floor(Math.random() * 10);
    
 
@@ -57,5 +56,4 @@ async function setComicInfo(comic: Comic) {
    }
 
    return newComic;
-
 }

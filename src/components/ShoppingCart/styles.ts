@@ -1,44 +1,5 @@
 import styled from 'styled-components';
-import { keyframes } from 'styled-components';
-
-const fadeIn = keyframes`
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-`;
-
-const scaleUpCenter = keyframes`
-    0% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-    }
-    100% {
-        -webkit-transform: scale(1.2);
-        transform: scale(1.2);
-    }
-    `;
-const scaleUpCenterZero = keyframes`
-    0% {
-        -webkit-transform: scale(0);
-        transform: scale(0);
-    }
-    100% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-    }
-    `;
-
-const rotateSpinner = keyframes`
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-    `;
+import { fadeIn, scaleUpCenter } from '../../styles/animations';
 
 export const Wrapper = styled.aside`
     height: calc(100vh - 60px);
@@ -80,7 +41,13 @@ export const Wrapper = styled.aside`
             color: white;
             border-radius: 5px;
             cursor: pointer;
-        }
+            :hover{
+                -webkit-animation: ${scaleUpCenter} 0.4s
+                cubic-bezier(0.39, 0.575, 0.565, 1) both;
+                animation: ${scaleUpCenter} 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
+                both;
+            }
+        } 
     }
     @media (min-width: 768px) {
         width: 330px;
@@ -104,11 +71,6 @@ export const WrapperCartList = styled.ul`
     -ms-overflow-style: none;
     scrollbar-width: none;
     animation: ${fadeIn} 0.5s linear;
-
-    button:active {
-        animation: ${scaleUpCenter} 0.2s cubic-bezier(0.39, 0.575, 0.565, 1)
-            both;
-    }
 
     &::-webkit-scrollbar {
         display: none;

@@ -1,13 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-
-const scaleUpCenter = keyframes`
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(1.1);
-    }
-`;
+import { scaleUpCenter } from '../../styles/animations';
 
 export const Wrapper = styled.div`
     display: flex;
@@ -35,13 +27,11 @@ export const Wrapper = styled.div`
         width: 300px;
         height: 500px;
     }
-
 `;
 
 export const WrapperBuy = styled.div`
     display: flex;
 `;
-
 
 export const Title = styled.h2`
     overflow: hidden;
@@ -49,24 +39,25 @@ export const Title = styled.h2`
     height: 45px;
     margin: 0.5em;
     font-size: 1.1em;
-    color: #F1C621;
+    color: #f1c621;
     text-align: center;
-    text-shadow: 1px 0 0 #203846, -1px 0 0 #203846, 0 1px 0 #203846, 0 -1px 0 #203846, 1px 1px #203846, -1px -1px 0 #203846, 1px -1px 0 #203846, -1px 1px 0 #203846;
-
+    text-shadow: 1px 0 0 #203846, -1px 0 0 #203846, 0 1px 0 #203846,
+        0 -1px 0 #203846, 1px 1px #203846, -1px -1px 0 #203846,
+        1px -1px 0 #203846, -1px 1px 0 #203846;
 
     @media (max-width: 500px) {
         font-size: 1.2em;
     }
-    
+
     a {
         text-decoration: none;
         all: unset;
         cursor: pointer;
-        :hover{
+        :hover {
             color: orange;
         }
     }
-    `;
+`;
 
 export const Description = styled.p`
     color: white;
@@ -77,10 +68,9 @@ export const Price = styled.p`
     margin: 0 10px 0 0;
     font-weight: bold;
     font-size: 1.8em;
-    background: -webkit-linear-gradient(#14171A,#426B89);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    
+    background: -webkit-linear-gradient(#14171a, #426b89);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 `;
 
 export const Img = styled.img`
@@ -88,8 +78,9 @@ export const Img = styled.img`
     width: 200px;
     height: 70%;
     box-shadow: 2px 2px 10px 2px;
-    &:hover{
-        animation: ${scaleUpCenter} 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    &:hover {
+        animation: ${scaleUpCenter} 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
+            both;
     }
     @media (max-width: 500px) {
         width: 300px;
@@ -103,7 +94,7 @@ export const Button = styled.button`
     font-weight: bold;
     padding: 0.5em 0.5em;
     margin-bottom: 0.2em;
-    background-color: #81343A;
+    background-color: #81343a;
     color: white;
     letter-spacing: 0.2em;
     border-radius: 5px;

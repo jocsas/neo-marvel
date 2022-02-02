@@ -1,24 +1,22 @@
 import styled from 'styled-components';
 
-
 export const Wrapper = styled.div`
     display: flex;
     width: 100%;
     padding: 30px 30px;
-    background: #352F32;
+    background: #352f32;
 `;
 
 export const WrapperComic = styled.div`
     display: flex;
     width: 100%;
-    
+
     @media (max-width: 768px) {
         display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+        justify-content: space-around;
+        flex-wrap: wrap;
     }
-
- `;
+`;
 
 export const WrapperInfo = styled.div`
     display: flex;
@@ -38,8 +36,7 @@ export const Title = styled.h2`
     text-align: left;
     text-shadow: black 1px 1.2px;
     letter-spacing: 0.1em;
-    
- `;
+`;
 
 export const Description = styled.p`
     color: white;
@@ -52,8 +49,6 @@ export const Img = styled.img`
     width: 400px;
     height: 600px;
     box-shadow: 2px 2px 10px 2px;
-    
-    
 `;
 
 export const Button = styled.button`
@@ -66,10 +61,10 @@ export const Button = styled.button`
     padding: 5px;
     cursor: pointer;
     border: 1px solid black;
-    
+
     :hover {
         background-color: gold;
         color: black;
-        border: 1px solid #C07D07;
+        border: 1px solid #c07d07;
     }
 `;

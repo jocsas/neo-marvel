@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-
 export default createGlobalStyle`
         
     *{
@@ -7,8 +6,16 @@ export default createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         outline: 0;
+        border: none;
         font-family: 'Marvel', sans-serif;
     }
+    
+    main {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+}
 
     a {
         all: unset;

@@ -1,8 +1,6 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { getComic } from '../../helpers/api';
-import api from '../../services/api';
 import Comic from '../../types/Comic';
 import * as S from './styles';
 
@@ -17,21 +15,23 @@ export function ComicView() {
         }
         fetchData();
     }, []);
-    
+
     return (
         <S.Wrapper>
-            {comic.map(hq => (
-                <S.WrapperComic key={hq.id}>
+            {comic.map(comic => (
+                <S.WrapperComic key={comic.id}>
                     <S.Img
-                        src={`${hq.thumbnail.path}.${hq.thumbnail.extension}`}
-                        alt={`Picture of ${hq.title}`}
+                        src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
+                        alt={`Picture of ${comic.title}`}
                     />
                     <S.WrapperInfo>
-                        <S.Title>{hq.title}</S.Title>
+                        <S.Title>{comic.title}</S.Title>
                         <S.Description>
-                            {!hq.description || hq.description === '#N/A' ? 'No description' : hq.description}
+                            {!comic.description || comic.description === '#N/A'
+                                ? 'No description'
+                                : comic.description}
                         </S.Description>
-                        <Link to='/'>
+                        <Link to="/">
                             <S.Button>BACK</S.Button>
                         </Link>
                     </S.WrapperInfo>
