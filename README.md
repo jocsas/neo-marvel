@@ -5,9 +5,9 @@
 
 ##
 
-```yarn install``` - para baixar as dependências;
-```yarn start``` - para <strong>executar</strong> a aplicação;
-```yarn test``` - para testar usando <strong>Cypress</strong>;
+- ```yarn install``` - para baixar as dependências;
+- ```yarn start``` - para <strong>executar</strong> a aplicação;
+- ```yarn test``` - para testar usando <strong>Cypress</strong>;
 ##
 
 <strong>Abaixo segue alguns prints da aplicação e os desafios propostos.</strong>
@@ -45,10 +45,10 @@ seriam aplicados somente para HQ's respectivamente comuns e raras.
 
 ## 
 <p align="center">
-  <img src="./src/assets/print1.png" width="350" alt="home page printscreen">
-  <img src="./src/assets/print2.png" width="350" alt="comic view page printscreen">
-  <img src="./src/assets/print3.png" width="350" alt="home page with cart open printscreen">
-  <img src="./src/assets/print4.png" width="350" alt="checkout page printscreen">
+  <img src="./src/assets/print1.PNG" width="350" alt="home page printscreen">
+  <img src="./src/assets/print2.PNG" width="350" alt="comic view page printscreen">
+  <img src="./src/assets/print3.PNG" width="350" alt="home page with cart open printscreen">
+  <img src="./src/assets/print4.PNG" width="350" alt="checkout page printscreen">
 </p>
 
 ##
