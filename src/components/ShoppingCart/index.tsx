@@ -44,7 +44,7 @@ export function ShoppingCart() {
                                     </div>
                                     <span className="quantity">{quantity}</span>
                                     <span className="price">
-                                        {(comic.price * quantity).toFixed(2)}
+                                        $ {(comic.price * quantity).toFixed(2)}
                                     </span>
                                 </div>
                                 <button
@@ -70,7 +70,10 @@ export function ShoppingCart() {
                             data-cy='checkoutButton'
                             className="button"
                             style={{ fontSize: 18, height: 45 }}
-                            onClick={() => handleCartActive(false)}
+                            onClick={() => {
+                                window.scrollTo(0,0)
+                                handleCartActive(false)
+                            }}
                         >
                             Checkout
                         </button>
