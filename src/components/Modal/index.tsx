@@ -1,28 +1,28 @@
 import { Link } from 'react-router-dom';
 import { useShoppingCart } from '../../context/shoppingCart';
-import * as S from './styles'
+import * as S from './styles';
 
 export function Modal() {
+    const { clearShoppingCart } = useShoppingCart();
 
-   const { clearShoppingCart } = useShoppingCart();
-
-   return (
-      <S.WrapperModal>
-         <div className={'modal'}>
-            <div className={'modalWrapper'}>
-               <h2>Thank you!</h2>
-               <p>We hope you enjoy !</p>
-               <Link to='/'>
-                  <button
-                     className={'button'}
-                     style={{ fontSize: 18, height: 45 }}
-                     onClick={() => clearShoppingCart()}
-                  >
-                     Go back to Store
-                  </button>
-               </Link>
+    return (
+        <S.WrapperModal>
+            <div className={'modal'}>
+                <div className={'modalWrapper'}>
+                    <h2>Thank you!</h2>
+                    <p>We hope you enjoy !</p>
+                    <Link to="/">
+                        <button
+                            data-cy="goBackButton"
+                            className={'button'}
+                            style={{ fontSize: 18, height: 45 }}
+                            onClick={() => clearShoppingCart()}
+                        >
+                            Go back to Store
+                        </button>
+                    </Link>
+                </div>
             </div>
-         </div>
-      </S.WrapperModal>
-   )
+        </S.WrapperModal>
+    );
 }

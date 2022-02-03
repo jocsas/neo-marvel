@@ -15,7 +15,7 @@ export function ShoppingCart() {
         <S.Wrapper>
             <S.WrapperCartTop>
                 <p>Cart</p>
-                <button onClick={() => clearShoppingCart()}>Clear</button>
+                <button data-cy='clearCart' onClick={() => clearShoppingCart()}>Clear</button>
             </S.WrapperCartTop>
             <S.WrapperCartList>
                 {shoppingCart?.length == 0 ? (
@@ -48,6 +48,7 @@ export function ShoppingCart() {
                                     </span>
                                 </div>
                                 <button
+                                    data-cy= 'removeIndividual'
                                     onClick={() => removeComic(comic)}
                                     title="Remove from cart"
                                 >
@@ -66,6 +67,7 @@ export function ShoppingCart() {
                     </div>
                     <Link to="/checkout">
                         <button
+                            data-cy='checkoutButton'
                             className="button"
                             style={{ fontSize: 18, height: 45 }}
                             onClick={() => handleCartActive(false)}

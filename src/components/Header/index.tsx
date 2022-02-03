@@ -17,33 +17,35 @@ export function Header() {
         <>
             <S.Wrapper>
                 <S.WrapperNav>
-                    <Link to="/">
-                        <h2 className="logo">NEO STORE</h2>
+                    <Link to='/'>
+                        <h2 data-cy='logo' className='logo'>NEO STORE</h2>
                     </Link>
 
-                    <form role="search" className="searchBarWrapper">
+                    <form role='search' className='searchBarWrapper'>
                         <input
-                            type="text"
-                            name="searchbar"
-                            id="searchbar"
-                            placeholder="Search"
+                            data-cy= 'searchbar'
+                            type='text'
+                            name='searchbar'
+                            id='searchbar'
+                            placeholder='Search'
                         />
                         <button
-                            className="searchIcon"
-                            title="Search"
-                            type="submit"
+                            className='searchIcon'
+                            title='Search'
+                            type='submit'
                         >
                             <BsSearch />
                         </button>
                     </form>
-                    <div className="cart">
+                    <div className='cart'>
                         <button
-                            title="Carrinho de compras"
-                            className="cartIcon"
+                            data-cy='cartIcon'
+                            title='shoppingCart'
+                            className='cartIcon'
                             onClick={() => handleShoppingCartDisplay()}
                         >
                             <BsFillCartFill size={24} />
-                            <span className="cartQuantity">
+                            <span data-cy='quantityBadge' className='cartQuantity'>
                                 {getCartLenght()}
                             </span>
                         </button>

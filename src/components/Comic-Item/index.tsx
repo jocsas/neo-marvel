@@ -7,17 +7,19 @@ export function ComicItem(comic: Comic) {
     const { addComic } = useShoppingCart();
 
     return (
-        <S.Wrapper>
+        <S.Wrapper data-cy='comic'>
             <S.Img
+                data-cy='comicImg'
                 src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
                 alt={`Picture of ${comic.title}`}
             />
-            <S.Title>
+            <S.Title data-cy='comicTitle'>
                 <Link to={`/details/${comic.id}`}>{comic.title}</Link>
             </S.Title>
             <S.WrapperBuy>
-                <S.Price>${comic.price.toFixed(2)}</S.Price>
+                <S.Price data-cy='comicPrice'>${comic.price.toFixed(2)}</S.Price>
                 <S.Button
+                    data-cy='comicBuy'
                     className={`${comic.rare === 0 ? 'rareItem' : ''}`}
                     onClick={() => addComic(comic, 1)}
                 >

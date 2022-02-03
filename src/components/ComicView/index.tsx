@@ -21,18 +21,19 @@ export function ComicView() {
             {comic.map(comic => (
                 <S.WrapperComic key={comic.id}>
                     <S.Img
+                        data-cy='comicImgIndividual'
                         src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
                         alt={`Picture of ${comic.title}`}
                     />
                     <S.WrapperInfo>
-                        <S.Title>{comic.title}</S.Title>
-                        <S.Description>
+                        <S.Title data-cy='comicTitleIndividual'>{comic.title}</S.Title>
+                        <S.Description data-cy='comicDescIndividual'>
                             {!comic.description || comic.description === '#N/A'
                                 ? 'No description'
                                 : comic.description}
                         </S.Description>
                         <Link to="/">
-                            <S.Button>BACK</S.Button>
+                            <S.Button data-cy='backButton'>BACK</S.Button>
                         </Link>
                     </S.WrapperInfo>
                 </S.WrapperComic>
