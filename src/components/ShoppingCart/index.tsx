@@ -70,10 +70,7 @@ export function ShoppingCart() {
                             data-cy='checkoutButton'
                             className="button"
                             style={{ fontSize: 18, height: 45 }}
-                            onClick={() => {
-                                window.scrollTo(0,0)
-                                handleCartActive(false)
-                            }}
+                            onClick={() => handleCartActive(false)}
                         >
                             Checkout
                         </button>

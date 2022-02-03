@@ -42,8 +42,7 @@ export function Checkout() {
             const { comic, quantity } = cartItem;
             if (coupon === regularCoupon)
                 setDiscountRegular((discountRegular = 10))!;
-            if (coupon === goldCoupon)
-                setDiscountGold((discountGold = 10))!;
+            if (coupon === goldCoupon) setDiscountGold((discountGold = 10))!;
             total +=
                 (comic.price -
                     (comic.rare > 0 ? discountRegular : discountGold)) *
@@ -62,27 +61,30 @@ export function Checkout() {
                 {showModal ? <Modal /> : null}
                 <S.Wrapper>
                     {shoppingCart?.length == 0 ? (
-                        <div className='noItems'>
-                            <BsFillCartXFill data-cy='emptyCartIcon' size={40} />
+                        <div className="noItems">
+                            <BsFillCartXFill
+                                data-cy="emptyCartIcon"
+                                size={40}
+                            />
                             <h1>You need to add some itens first....</h1>
                         </div>
                     ) : (
                         <>
                             <form
-                                id='checkoutForm'
+                                id="checkoutForm"
                                 onSubmit={handleSubmit(onSubmit)}
-                                className='checkoutForm'
+                                className="checkoutForm"
                             >
                                 <h1>Checkout</h1>
-                                <label className='errorMessage' htmlFor='name'>
+                                <label className="errorMessage" htmlFor="name">
                                     {errors.name && errors.name.message}
                                 </label>
                                 <input
-                                    data-cy='inputName'
-                                    id='name'
-                                    type='text'
-                                    placeholder='Fullname'
-                                    title='Type your fullname'
+                                    data-cy="inputName"
+                                    id="name"
+                                    type="text"
+                                    placeholder="Fullname"
+                                    title="Type your fullname"
                                     className={`${'input'} ${
                                         errors.name ? 'inputError' : ''
                                     }`}
@@ -96,21 +98,21 @@ export function Checkout() {
                                     required
                                 />
 
-                                <div className='fieldsetWrapper'>
-                                    <fieldset className='inputSmall'>
+                                <div className="fieldsetWrapper">
+                                    <fieldset className="inputSmall">
                                         <label
                                             className={'errorMessage'}
-                                            htmlFor='phone'
+                                            htmlFor="phone"
                                         >
                                             {errors.phone &&
                                                 errors.phone.message}
                                         </label>
                                         <input
-                                            data-cy='inputPhone'
-                                            id='phone'
-                                            type='tel'
-                                            placeholder='Phone'
-                                            title='Type your phone, only numbers'
+                                            data-cy="inputPhone"
+                                            id="phone"
+                                            type="tel"
+                                            placeholder="Phone"
+                                            title="Type your phone, only numbers"
                                             maxLength={11}
                                             className={`${'input'} ${
                                                 errors.phone ? 'inputError' : ''
@@ -127,17 +129,17 @@ export function Checkout() {
                                     <fieldset>
                                         <label
                                             className={'errorMessage'}
-                                            htmlFor='email'
+                                            htmlFor="email"
                                         >
                                             {errors.email &&
                                                 errors.email.message}
                                         </label>
                                         <input
-                                            data-cy='inputEmail'
-                                            id='email'
-                                            type='email'
-                                            placeholder='E-mail'
-                                            title='Type your email'
+                                            data-cy="inputEmail"
+                                            id="email"
+                                            type="email"
+                                            placeholder="E-mail"
+                                            title="Type your email"
                                             className={`${'input'} ${
                                                 errors.email ? 'inputError' : ''
                                             }`}
@@ -151,20 +153,20 @@ export function Checkout() {
                                         />
                                     </fieldset>
                                 </div>
-                                <div className='fieldsetWrapper'>
+                                <div className="fieldsetWrapper">
                                     <fieldset className={'inputSmall'}>
                                         <label
                                             className={'errorMessage'}
-                                            htmlFor='cep'
+                                            htmlFor="cep"
                                         >
                                             {errors.cep && errors.cep.message}
                                         </label>
                                         <input
-                                            data-cy='inputZip'
-                                            id='zip'
-                                            type='text'
-                                            placeholder='ZipCode'
-                                            title='Type your ZipCode, only numbers'
+                                            data-cy="inputZip"
+                                            id="zip"
+                                            type="text"
+                                            placeholder="ZipCode"
+                                            title="Type your ZipCode, only numbers"
                                             maxLength={8}
                                             className={`${'input'} ${
                                                 errors.cep ? 'inputError' : ''
@@ -181,16 +183,16 @@ export function Checkout() {
                                     <fieldset>
                                         <label
                                             className={'errorMessage'}
-                                            htmlFor='address'
+                                            htmlFor="address"
                                         >
                                             {errors.address &&
                                                 errors.address.message}
                                         </label>
                                         <input
-                                            data-cy='inputAddress'
-                                            type='text'
-                                            placeholder='Address'
-                                            title='Type your address'
+                                            data-cy="inputAddress"
+                                            type="text"
+                                            placeholder="Address"
+                                            title="Type your address"
                                             className={`${'input'} ${
                                                 errors.address
                                                     ? 'inputError'
@@ -206,20 +208,20 @@ export function Checkout() {
                                         />
                                     </fieldset>
                                 </div>
-                                <div className='fieldsetWrapper'>
-                                    <fieldset className='inputMedium'>
+                                <div className="fieldsetWrapper">
+                                    <fieldset className="inputMedium">
                                         <label
                                             className={'errorMessage'}
-                                            htmlFor='city'
+                                            htmlFor="city"
                                         >
                                             {errors.city && errors.city.message}
                                         </label>
                                         <input
-                                            data-cy='inputCity'
-                                            id='city'
-                                            type='text'
-                                            placeholder='City'
-                                            title='Type your city'
+                                            data-cy="inputCity"
+                                            id="city"
+                                            type="text"
+                                            placeholder="City"
+                                            title="Type your city"
                                             className={`${'input'} ${
                                                 errors.city ? 'inputError' : ''
                                             }`}
@@ -232,20 +234,20 @@ export function Checkout() {
                                             })}
                                         />
                                     </fieldset>
-                                    <fieldset className='inputMedium'>
+                                    <fieldset className="inputMedium">
                                         <label
                                             className={'errorMessage'}
-                                            htmlFor='state'
+                                            htmlFor="state"
                                         >
                                             {errors.state &&
                                                 errors.state.message}
                                         </label>
                                         <input
-                                            data-cy='inputState'
-                                            id='state'
-                                            type='text'
-                                            placeholder='State'
-                                            title='Type you state'
+                                            data-cy="inputState"
+                                            id="state"
+                                            type="text"
+                                            placeholder="State"
+                                            title="Type you state"
                                             className={`${'input'} ${
                                                 errors.state ? 'inputError' : ''
                                             }`}
@@ -261,20 +263,20 @@ export function Checkout() {
                                     </fieldset>
                                 </div>
                                 <div>
-                                    <fieldset className='inputMedium'>
+                                    <fieldset className="inputMedium">
                                         <label
                                             className={'errorMessage'}
-                                            htmlFor='coupon'
+                                            htmlFor="coupon"
                                         >
                                             {errors.coupon &&
                                                 errors.coupon.message}
                                         </label>
-                                        <div className='couponInputWrapper'>
+                                        <div className="couponInputWrapper">
                                             <input
-                                                data-cy='inputPromoCode'
-                                                type='text'
-                                                placeholder='Discount coupon'
-                                                title='coupon'
+                                                data-cy="inputPromoCode"
+                                                type="text"
+                                                placeholder="Discount coupon"
+                                                title="coupon"
                                                 value={undefined}
                                                 onChange={e =>
                                                     setCoupon(e.target.value)
@@ -286,9 +288,9 @@ export function Checkout() {
                                                 }`}
                                             />
                                             <button
-                                                data-cy='addPromoCode'
-                                                className='addIcon'
-                                                title='addCoupon'
+                                                data-cy="addPromoCode"
+                                                className="addIcon"
+                                                title="addCoupon"
                                                 onClick={e => {
                                                     e.preventDefault();
                                                     handleSetTotal();
@@ -300,7 +302,7 @@ export function Checkout() {
                                     </fieldset>
                                 </div>
                             </form>
-                            <div className='checkoutItems'>
+                            <div className="checkoutItems">
                                 <table>
                                     <thead>
                                         <tr>
@@ -371,7 +373,7 @@ export function Checkout() {
                                                                     comic,
                                                                 )
                                                             }
-                                                            title='Remove'
+                                                            title="Remove"
                                                         >
                                                             <BsTrashFill
                                                                 size={20}
@@ -383,10 +385,13 @@ export function Checkout() {
                                         );
                                     })}
                                 </table>
-                                <div className='bottom'>
-                                    <div className='total'>
+                                <div className="bottom">
+                                    <div className="total">
                                         <p>Total:</p>
-                                        <p data-cy='totalValue' className='totalValue'>
+                                        <p
+                                            data-cy="totalValue"
+                                            className="totalValue"
+                                        >
                                             ${' '}
                                             {(totalValue === undefined
                                                 ? getTotalValue()
@@ -396,11 +401,14 @@ export function Checkout() {
                                     </div>
                                     <button
                                         data-cy="finishOrder"
-                                        className='button'
+                                        className="button"
                                         style={{ fontSize: 18, height: 45 }}
-                                        type='submit'
-                                        form='checkoutForm'
-                                        onClick={() => handleCartActive(false)}
+                                        type="submit"
+                                        form="checkoutForm"
+                                        onClick={() => {
+                                            window.scrollTo(0, 0);
+                                            handleCartActive(false);
+                                        }}
                                     >
                                         Checkout
                                     </button>
